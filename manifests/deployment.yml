@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ccitongpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ccitongpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: ccitongpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: ccitongpipelinesjavascriptdocker 
+          image: mycontainerregistry1.azurecr.io/ccitongpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
